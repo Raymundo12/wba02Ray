@@ -18,6 +18,11 @@ app.get('/Hello/:foo/:bar', (req, res) => {
    
 });
 
+app.post('/hello', (req, res) => {
+    res.json({result: 'Post was sent'});
+
+})
+
 //http.createServer((req, res)=>{
   //res.write(users.join("\n")); //display the list of users on the page
   //res.end(); //end the response
