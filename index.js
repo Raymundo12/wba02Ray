@@ -3,7 +3,7 @@ axios = require('axios'),
 logger = require('morgan'),
 cors = require('cors'),
 express = require('express'),
-bodyParse = require('body-parse');
+bodyParser = require('body-parser');
 
 var app = express();
 var port = 8000;
