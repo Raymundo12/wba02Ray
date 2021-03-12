@@ -1,17 +1,35 @@
-const http = require('http');
-const axios = require('axios');
+const http = require('http'),
+axios = require('axios'),
+logger = require('morgan'),
+cors = require('cors'),
+express = require('express'),
+bodyParse = require('body-parse');
 
-http.createServer((req, res)=>{
-  res.write(users.join ("\n")); // write a response
-  res.end(); //end the response
-}).listen(8000); // listen for requests on port 8000
+var app = express();
+var port = 8000;
 
- let users = []; // names of users will be stored here
-    axios.get("https://jsonplaceholder.typicode.com/users")
-    .then(({ data }) => {
-      users = data.map(user => user.name); // get only the names of the users and store in an array
-      conssole.log(users)
-    })
-    .catch(error=>{
-      console.log(error);
-    });
+app.get('/HelloCabron', (req, res) => {
+    res.write("Hello Cabron;");
+    res.write(users.join('\n'));
+})
+
+//http.createServer((req, res)=>{
+  //res.write(users.join("\n")); //display the list of users on the page
+  //res.end(); //end the response
+//}).listen(8000); // listen for requests on port 8000
+
+let users = []; // names of users will be stored here
+(async function getNames(){
+  try{
+    const {data} = await axios.get("https://jsonplaceholder.typicode.com/users");
+    users = data.map(user=>user.email);
+    console.log(users)
+  } catch(error){
+    console.log(error)
+  }
+})()
+
+app.listen(port, function(err) {
+console.log('Listening on port: ' + port) ; 
+
+});
