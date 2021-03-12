@@ -9,8 +9,8 @@ var app = express();
 var port = 8000;
 
 app.get('/HelloCabron', (req, res) => {
-    res.write("Hello Cabron;");
-    res.write(users.join('\n'));
+    res.send('Hello Cabron!\n\n' + users.join('\n'));
+   
 })
 
 //http.createServer((req, res)=>{
