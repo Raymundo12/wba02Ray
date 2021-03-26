@@ -1,21 +1,16 @@
-const express = require('express'),
+var express = require('express'),
 router = express.Router();
 
-var itemCtrl = require('./item-controller');
+router.get('/Hello/:foo/:bar', (req, res) => {
+    res.json({message: 'Hello Cabron', data: [
+        req.params.foo,
+        req.params.bar
+    ]});
+   
+});
 
-router.get('/hello', itemCtrl.getWorld);
+router.post('/hello', (req, res) => {
+    res.json({result: 'Post was sent'});
 
-//router.get('/hello/:foo/:bar', (req, res) =>{
-//    res.json({message: 'Hello BSCbest!', data:[
-//        req.params.foo,
-//        req.params.bar
-//    ]})
-//});
-
-//router.post('/hello', (req, res) => {
-
-//res.json({result: 'Post was sent', data: req.body});
-
-//} );
-
+});
 module.exports = router;
