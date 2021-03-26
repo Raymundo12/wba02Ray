@@ -8,20 +8,9 @@ bodyParser = require('body-parser');
 var app = express();
 var port = 8000;
 
-app.use(bodyParser.json())
-
-app.get('/Hello/:foo/:bar', (req, res) => {
-    res.json({message: 'Hello Cabron', data: [
-        req.params.foo,
-        req.params.bar
-    ]});
-   
-});
-
-app.post('/hello', (req, res) => {
-    res.json({result: 'Post was sent'});
-
-})
+app.use(bodyParser.json());
+app.use(logger('tiny'));
+app.use(require('./routes'));
 
 //http.createServer((req, res)=>{
   //res.write(users.join("\n")); //display the list of users on the page
