@@ -14,8 +14,8 @@ app.use(logger('tiny'));
 app.use(require('./routes'));
 
 //http.createServer((req, res)=>{
-  //res.write(users.join("\n")); //display the list of users on the page
-  //res.end(); //end the response
+//res.write(users.join("\n")); //display the list of users on the page
+//res.end(); //end the response
 //}).listen(8000); // listen for requests on port 8000
 
 //let users = []; // names of users will be stored here
@@ -41,7 +41,7 @@ app.use(require('./routes'));
 //});
 
 app.listen(port, function(err) {
-console.log('Listening on port: ' + port) ; 
+    console.log('Listening on port: ' + port); 
 
 });
 
