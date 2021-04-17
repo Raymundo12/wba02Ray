@@ -22,3 +22,14 @@ exports.getUsers = function(req, res) {
     res.json(user);
     });
 };
+
+exports.getUsers = function(req, res) {
+    User.findOne({_id: req.params.id}, function (err, users){
+
+        if (err) {
+            res.status(400).json(err);
+        }
+
+    res.json(user);
+    });
+};

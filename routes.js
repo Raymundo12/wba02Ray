@@ -1,4 +1,4 @@
-var express = require('express'),
+const express = require('express'),
 router = express.Router();
 
 var itemCtrl = require('./item-controller'),
@@ -12,9 +12,6 @@ router.post('hello', itemCtrl.postWorld);
 
 router.post('/users', userCtrl.createUser);
 router.get('/users', userCtrl.getUsers);
+router.get('./users/:id', userCtrl.getUser);
 
-router.post('/hello', (req, res) => {
-    res.json({result: 'Post was sent'});
-
-});
 module.exports = router;
