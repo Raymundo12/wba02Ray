@@ -17,8 +17,8 @@ res.json({message: "Hello BScBest!", data: [
 ]});
 });
 
-//app.use(logger('tiny'));
-//app.use(require('./routes'));
+app.use(logger('tiny'));
+app.use(require('./routes'));
 
 //http.createServer((req, res)=>{
   //res.write(users.join("\n")); //display the list of users on the page
