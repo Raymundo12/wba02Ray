@@ -28,7 +28,7 @@ let users = []; // names of users will be stored here
   }
 })();
 
-mongoose.connect('mondb://localhost/test');
+mongoose.connect('mongodb://localhost/test');
 
 mongoose.connection.on('error', (err) => {
     console.log('Mongodb Error: ', err);
@@ -36,6 +36,7 @@ mongoose.connection.on('error', (err) => {
 });
 
 mongoose.connection.on('connected', () => {
+    console.log('MongoDB is successfully connected');
 });
 
 app.listen(port, function(err) {
