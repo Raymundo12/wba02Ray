@@ -4,6 +4,7 @@ logger = require('morgan'),
 cors = require('cors'),
 express = require('express'),
 bodyParser = require('body-parser');
+mongoose = require('mongoose');
 
 var app = express();
 var port = 8000;
