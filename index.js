@@ -9,8 +9,16 @@ var app = express();
 var port = 8000;
 
 app.use(bodyParser.json());
-app.use(logger('tiny'));
-app.use(require('./routes'));
+app.get('Hello/:foo:bar', (req, res) => {
+res.json({message: "Hello BScBest!", data: [
+   req.params.foo,
+   req.params.bar
+
+]});
+});
+
+//app.use(logger('tiny'));
+//app.use(require('./routes'));
 
 //http.createServer((req, res)=>{
   //res.write(users.join("\n")); //display the list of users on the page
