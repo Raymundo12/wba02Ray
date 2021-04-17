@@ -17,29 +17,36 @@ app.use(require('./routes'));
   //res.end(); //end the response
 //}).listen(8000); // listen for requests on port 8000
 
-let users = []; // names of users will be stored here
-(async function getNames(){
-  try{
-    const {data} = await axios.get("https://jsonplaceholder.typicode.com/users");
-    users = data.map(user=>user.email);
-    console.log(users)
-  } catch(error){
-    console.log(error)
-  }
-})();
+//let users = []; // names of users will be stored here
+//(async function getNames(){
+  //try{
+   // const {data} = await axios.get("https://jsonplaceholder.typicode.com/users");
+   // users = data.map(user=>user.email);
+//console.log(users)
+ // } catch(error){
+  //  console.log(error)
+ // }
+//})();
 
-mongoose.connect('mongodb://localhost/test');
+//mongoose.connect('mongodb://localhost/test');
 
-mongoose.connection.on('error', (err) => {
-    console.log('Mongodb Error: ', err);
-    process.exit();
-});
+//mongoose.connection.on('error', (err) => {
+  //  console.log('Mongodb Error: ', err);
+    //process.exit();
+//});
 
-mongoose.connection.on('connected', () => {
-    console.log('MongoDB is successfully connected');
-});
+//mongoose.connection.on('connected', () => {
+  //  console.log('MongoDB is successfully connected');
+//});
 
 app.listen(port, function(err) {
 console.log('Listening on port: ' + port) ; 
 
 });
+
+const Soups = "mongodb://localhost/test";
+mongoose.connect(Soups, {useNewUrlParser: true, useUnifiedTopology:true}
+)
+
+.then((result) => console.log('connected to db'))
+.catch((err) => console.log(err));
