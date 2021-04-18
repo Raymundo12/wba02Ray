@@ -6,9 +6,9 @@ del = require('del');
 
 exports.uploadImage = function(req, res)  {
 
-    let newImage = new Image ();
-    newImage.filename = req.filename;
-    newImage.originalName = req.file.originalName;
+    let newImage = new Image();
+    newImage.filename = req.file.filename;
+    newImage.originalName = req.file.originalname;
     newImage.desc = req.body.desc;
     newImage.setPointerCapture(err => {
          if (err){
