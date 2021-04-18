@@ -14,4 +14,11 @@ router.get('./users/:id', userCtrl.getUser);
 router.put('./users/:id', userCtrl.updateUser);
 router.delete('./users/:id', userCtrl.deleteUser);
 
+module.exports.UPLOAD_PATH = "uploads"
+
+var multer = require("multer");
+var upload = multer({dest: module.exports.UPLOAD_PATH});
+var imageCtrl = require('./image-controller');
+
+
 module.exports = router;
