@@ -6,7 +6,7 @@ userCtrl = require('./user-controller');
 
 router.get('hello', itemCtrl.getWorld);
 
-router.get('hello/foo/:bar', itemCtrl.getWorldParams);
+router.get('hello/:foo/:bar', itemCtrl.getWorldParams);
 
 router.post('hello', itemCtrl.postWorld);
 
