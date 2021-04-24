@@ -18,8 +18,9 @@ app.listen(port, function(err) {
 
 });
 
-const Soups = "mongodb://localhost/test";
-mongoose.connect(Soups, {useNewUrlParser: true, useUnifiedTopology:true}
-)
+//const Soups = "mongodb://localhost/test";
+const Soups = "mongodb+srv://m001-student:m001-student@recordstore.rrjgj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+mongoose.connect(Soups, {useNewUrlParser: true, useUnifiedTopology:true})
 .then((result) => console.log('connected to db'))
 .catch((err) => console.log(err));
