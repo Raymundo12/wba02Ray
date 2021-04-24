@@ -10,10 +10,26 @@ exports.uploadImage = function(req, res)  {
     newImage.filename = req.file.filename;
     newImage.originalName = req.file.originalname;
     newImage.desc = req.body.desc;
-    newImage.setPointerCapture(err => {
+    newImage.save(err => {
          if (err){
              return res.sendStatus(400);
          }
-         res.status(201).send({newImage})
+         res.status(201).send({ newImage })
     });
 };
+
+
+exports.getImages = function(req, res) {
+     Image.find({}, '-_v').lean().exec(err, images => {
+if (err) {
+    return res.sendStatus(400);
+}     
+for (let i = 0; i < images.length; i++) {
+    var img = images[i];
+    img.url = req.protocol + '://' + req.get('host') + '/images/' + img.id;
+}  
+
+ res.json(images);
+});
+
+}; 
