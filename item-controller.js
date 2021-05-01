@@ -10,6 +10,6 @@ exports.getWorld = function(req,res) {
  };
 
  exports.postWorld = function (req, res) {
-     res.json({result: 'post was sent', data: req.body})
+     res.json({result: 'post was sent', data: req.body});
 
  };

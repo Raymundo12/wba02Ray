@@ -1,5 +1,5 @@
 const UPLOAD_PATH = require('./routes').UPLOAD_PATH,
-Image = require('./models/image'),
+image = require('./models/image'),
 path = require('path'),
 fs = require('fs'),
 del = require('del');
@@ -18,12 +18,12 @@ exports.uploadImage = function(req, res) {
 };
 
 exports.getImages = function(req, res) {
-     Image.find({}, '-_v').lean().exec(err, images => {
+     Image.find({}, '-_v').lean().exec(err, image => {
 if (err) {
     return res.sendStatus(400);
 }     
 for (let i = 0; i < images.length; i++) {
-    var img = images[i];
+    var img = image[i];
     img.url = req.protocol + '://' + req.get('host') + '/images/' + img.id;
 }  
 
