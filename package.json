@@ -16,5 +16,8 @@
     "url": "https://github.com/Raymundo12/wba02Ray/issues"
   },
   "homepage": "https://github.com/Raymundo12/wba02Ray#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
 }
