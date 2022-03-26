@@ -1,6 +1,15 @@
-const { default: axios } = require("axios")
-const http = require("http")
+const http = require("http");
+
 axios = require("axios");
+mongoose = require(mongoose);
+const mongoose = require("mongoose");
+
+const userSchema = new mongoose.Schema({
+
+})
+
+module.exports = mongoose.model('User', userSchema);
+
 
 http.createServer((req, res)=>{
    res.write(users.join(", ")); 
@@ -8,6 +17,23 @@ http.createServer((req, res)=>{
 }).listen(8000); 
 
 let users = [];
+
+
+const mongoose = require("mongoose");
+
+const userSchema = new mongoose.Schema({
+    email: { type: String, unique: true, lowercase: true},
+    password: String,
+    username: String,
+    gender: {
+        type: String,
+        enum: ['MALE', 'FEMALE']
+    },
+    phone: Number
+})
+
+module.exports = mongoose.model('User', userSchema);
+
 
 (async function getNames(){
    try{

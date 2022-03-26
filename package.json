@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Raymundo12/wba02Ray#readme",
   "description": "",
   "dependencies": {
-    "axios": "^0.26.1"
+    "axios": "^0.26.1",
+    "mongoose": "^6.2.8"
   }
 }
