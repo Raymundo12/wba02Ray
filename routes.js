@@ -5,4 +5,4 @@ const express = require("express"),
         res.json({message: "Hello Wolrd!"})
     });
 
-module.exports = router()      
+module.exports = router();     
