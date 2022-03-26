@@ -1,8 +1,8 @@
 const express = require("express"),
-      router = express.Router();
+      router = express.Router(),
+      itemCtrl = require("./item-controller");
 
-      router.get("/", (req, res)=>{
-        res.json({message: "Hello Wolrd!"})
-    });
+ 
+      router.get("/:foot/:bar", itemCtrl.helloWorld);
 
-module.exports = router();     
+module.exports = router;
