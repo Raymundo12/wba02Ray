@@ -6,7 +6,7 @@ const http = require("http");
 
 
 let app = express();
-let port = 5000;
+let port = 4000;
 
 app.use(require("./routes"));
 app.use(bodyParser.json());
