@@ -16,21 +16,24 @@
     "url": "https://github.com/Raymundo12/wba02Ray/issues"
   },
   "homepage": "https://github.com/Raymundo12/wba02Ray#readme",
-  "description": "",
   "dependencies": {
     "axios": "^0.26.1",
     "body-parser": "^1.20.0",
     "del": "^6.0.0",
+    "ejs": "^3.1.7",
     "express": "^4.18.1",
     "fs": "^0.0.1-security",
     "logger": "^0.0.1",
-    "mongoose": "^6.3.1",
+    "mongoose": "^6.3.2",
     "moongose": "^1.0.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
-    "nodemon": "^2.0.16",
     "npm": "^8.9.0",
     "path": "^0.12.7",
     "start": "^5.1.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }
