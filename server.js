@@ -1,5 +1,6 @@
 const express = require('express')
-const usersRouter = require('/routes/users')
+const { users } = require('moongose/models')
+const usersRouter = require('./routes/users')
 const app = express()
 
 app.set('view engine', 'ejs')
@@ -8,7 +9,13 @@ app.use('/users', usersRouter)
 
 
 app.get('/', (req, res) => {
-   res.render('index')
+    const users = [{
+        title: 'Test Users',
+        CreateAT: Date.now(),
+        description: 'TEST Description'
+    }]
+
+   res.render('index', {users: users  })
 })
 
 app.listen(5000)
