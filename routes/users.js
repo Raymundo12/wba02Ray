@@ -6,8 +6,23 @@ router.get('/new', (req, res) => {
     res.render('departures/new')
 })
 
-router.post('/', (req, res) => {
-    
+router.get('/:id', (res, req) =>{
+
+})
+
+router.post('/', async (req, res) => {
+    const departures = new Departures({
+      title: req.body.title,
+      description: req.body.description,
+      markdown: req.body.markdown,
+    })
+try {
+departures = await departures.save()
+   res.redirect(`/users/${users.id}`)
+} catch (e) {
+    res.render('departures/new', {users: users })
+}
+
 })
 
 module.exports = router

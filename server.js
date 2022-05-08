@@ -8,6 +8,7 @@ mongoose.connect('mongodb://localhost/blog', {useNewUrlParser: true})
 app.set('view engine', 'ejs')
 
 app.use('/users', usersRouter)
+app.use(express.urlencoded({ extended: false }))
 
 
 app.get('/', (req, res) => {
