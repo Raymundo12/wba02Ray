@@ -13,6 +13,11 @@ app.get('/', (req, res) => {
         title: 'Test Users',
         CreateAT: Date.now(),
         description: 'TEST Description'
+    },
+    {
+        title: 'Test Users2',
+        CreateAT: Date.now(),
+        description: 'TEST Description2'
     }]
 
    res.render('index', {users: users  })

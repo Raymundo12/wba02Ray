@@ -8,6 +8,15 @@
     <title>Frijolero</title>
 </head>
 <body>
-    <h1><%= users %> </h1>
+    <div class="container">
+    <h1 class="mb-4">Departures</h1> 
+    <a href="/users/new" class="btn btn-success">New Departure</a>
+        
+    <% users.forEach(Departure => { %>
+      <div class="card mt-4">
+        <%= Departure.title %>  
+      </div>
+    <% }) %>
+    </div>
     </body>
 </html>
