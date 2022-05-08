@@ -1,4 +1,5 @@
 const express = require('express')
+const Departures = require('./../models/departure')
 const router = express.Router()
 
 router.get('/new', (req, res) => {
