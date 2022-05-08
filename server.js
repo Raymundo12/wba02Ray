@@ -1,7 +1,10 @@
 const express = require('express')
-const { users } = require('moongose/models')
+const { default: mongoose } = require('mongoose')
+const moongose = require('mongoose')
 const usersRouter = require('./routes/users')
 const app = express()
+
+mongoose.connect('mongodb://localhost/blog', {useNewUrlParser: true})
 
 app.set('view engine', 'ejs')
 
@@ -23,4 +26,4 @@ app.get('/', (req, res) => {
    res.render('departures/index', {users: users  })
 })
 
-app.listen(3000)
+app.listen(6000)
