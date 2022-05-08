@@ -11,16 +11,16 @@ app.use('/users', usersRouter)
 app.get('/', (req, res) => {
     const users = [{
         title: 'Test Users',
-        CreateAT: Date.now(),
+        DateDepart: new Date(),
         description: 'TEST Description'
     },
     {
-        title: 'Test Users2',
-        CreateAT: Date.now(),
-        description: 'TEST Description2'
+        title: 'Test Users 2',
+        DateDepart: new Date (),
+        description: 'TEST Description 2'
     }]
 
    res.render('index', {users: users  })
 })
 
-app.listen(5000)
+app.listen(3000)

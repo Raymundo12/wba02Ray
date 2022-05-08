@@ -14,8 +14,13 @@
         
     <% users.forEach(Departure => { %>
       <div class="card mt-4">
-        <%= Departure.title %>  
+        <div class="card-body"></div>
+        <h4 class="card-title"><%= Departure.title %></h4>
+        <div class="card-subtitle text-muted mb-2">
+          <%= Departure.DateDepart.toLocaleDateString() %>
       </div>
+    </div>
+  </div>
     <% }) %>
     </div>
     </body>
