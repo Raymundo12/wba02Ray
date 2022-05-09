@@ -1,3 +1,6 @@
+const express =require("express");
+const app = express();
+
 const mongoose = require('mongoose')
 
 const departureSchema = new mongoose.Schema({

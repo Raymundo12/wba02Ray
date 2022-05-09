@@ -3,12 +3,27 @@ const mongoose = require('mongoose')
 const usersRouter = require('./routes/users')
 const app = express()
 
-mongoose.connect('mongodb://localhost/blog', {useNewUrlParser: true})
-
 app.set('view engine', 'ejs')
 
 app.use('/users', usersRouter)
 app.use(express.urlencoded({ extended: false }))
+
+
+const database = module.exports = () => {
+
+    const connectionParams = {
+        
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    }
+     try {
+        mongoose.connect('mongodb+srv://Raymundo:19831027%Fel@cluster0.pcxue.mongodb.net/books?retryWrites=true&w=majority')
+     } catch (error) {
+
+     }
+    
+}
+
 
 
 app.get('/', (req, res) => {
