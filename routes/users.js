@@ -20,7 +20,7 @@ try {
 departures = await departures.save()
    res.redirect(`/users/${users.id}`)
 } catch (e) {
-    res.render('departures/new', {users: users })
+    res.render('departures/new', {departures: departures })
 }
 
 })

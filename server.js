@@ -1,30 +1,12 @@
+const bodyParser = require('body-parser')
 const express = require('express')
 const mongoose = require('mongoose')
 const usersRouter = require('./routes/users')
-const app = express()
+const app = express(),
+logger = require("morgan")
 
 app.set('view engine', 'ejs')
-
-app.use('/users', usersRouter)
 app.use(express.urlencoded({ extended: false }))
-
-
-const database = module.exports = () => {
-
-    const connectionParams = {
-        
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    }
-     try {
-        mongoose.connect('mongodb+srv://Raymundo:19831027%Fel@cluster0.pcxue.mongodb.net/books?retryWrites=true&w=majority')
-     } catch (error) {
-
-     }
-    
-}
-
-
 
 app.get('/', (req, res) => {
     const users = [{
@@ -41,4 +23,9 @@ app.get('/', (req, res) => {
    res.render('departures/index', {users: users  })
 })
 
-app.listen(6000)
+app.use('/users', usersRouter)
+
+app.listen(6000), () => {
+   console.log("Server Running on Port 3000")
+
+}
