@@ -3,7 +3,7 @@ const Departures = require('./../models/departure')
 const router = express.Router()
 
 router.get('/new', (req, res) => {
-    res.render('departures/new')
+    res.render('departures/new', { departures: new Departures() })
 })
 
 router.get('/:id', (res, req) =>{
