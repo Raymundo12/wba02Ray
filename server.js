@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 app.use('/users', usersRouter)
 
-app.listen(6000), () => {
+app.listen(3000), () => {
    console.log("Server Running on Port 3000")
 
 }
