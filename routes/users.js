@@ -7,11 +7,11 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/:id', (res, req) =>{
-
+   res.send(req.params.id)
 })
 
 router.post('/', async (req, res) => {
-    const departures = new Departures({
+    let departures = new Departures({
       title: req.body.title,
       description: req.body.description,
       markdown: req.body.markdown,
@@ -20,6 +20,7 @@ try {
 departures = await departures.save()
    res.redirect(`/users/${users.id}`)
 } catch (e) {
+    console.log(e)
     res.render('departures/new', {departures: departures })
 }
 
