@@ -6,9 +6,10 @@ router.get('/new', (req, res) => {
     res.render('departures/new', { departures: new Departures() })
 })
 
-router.get('/:id', (res, req) =>{
-    const departures = Departures.findById(req.params.id)
-   res.send(req.params.id)
+router.get('/:id', async (res, req) =>{
+    const departures = await Departures.findById(req.params.id)
+    if (departures == null) res.redirect('/')
+   res.render('departures/show',  {departures: departures})
 })
 
 router.post('/', async (req, res) => {
