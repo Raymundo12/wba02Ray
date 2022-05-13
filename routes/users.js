@@ -7,6 +7,7 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/:id', (res, req) =>{
+    const departures = Departures.findById(req.params.id)
    res.send(req.params.id)
 })
 
